@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <!-- cstm css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- leaflet lib -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- HEADER COMPONENT -->
+      <header class="header  " id="header">
+        <div class="location">
+          <i class="fa-solid fa-location-dot location-icon"></i>
+          <span id="user-location">Sudan - khartoum</span>
+        </div>
+        <div class="search-box">
+          <input type="text" id="city-name" placeholder="Search city...." />
+          <i
+            class="fa-solid fa-magnifying-glass search-icon"
+            id="search-icon"></i>
+        </div>
+        <div class="dark-mod ">
+          <div class="icon  ">
+            <i class="fa-regular fa-sun light theme-switcher"></i>
+            <i class="fa-regular fa-moon dark active theme-switcher"></i>
+          </div>
+        </div>
+      </header>
+      <!-- FORECAST DETAILS SECTION -->
+      <section class="forecast-details">
+        <div class="details  ">
+          <div class="details-top  ">
+            <div class="left-box  ">
+              <span id="today-forecast" class="day-forecast today">Today</span>
+              <span id="tomorrow-forecast" class="day-forecast tomorrow">Tomorrow</span>
+              <span id="week-forecast" class="day-forecast active nextdays">next 7 days</span>
+            </div>
+            <div class="right-box  " id="right-box">
+              <span class="switch-weather forecast active">forecast</span>
+              <span class="switch-weather air">air Quality</span>
+            </div>
+          </div>
+          <div class="details-bottom" id="week-day">
+            <div class="days">
+              <div class="head">
+                <span>Tue</span>
+              </div>
+              <div class="body">
+                <img
+                  src="./assets/svg/rain-and-sleet-mix.svg"
+                  alt="rain-and-sleet-mix" />
+                <span class="degree">27</span>
+              </div>
+              <div class="flip-card"></div>
+            </div>
+            <div class="days">
+              <div class="head">
+                <span>Tue</span>
+              </div>
+              <div class="body">
+                <img
+                  src="./assets/svg/rain-and-sleet-mix.svg"
+                  alt="rain-and-sleet-mix" />
+                <span class="degree">27</span>
+              </div>
+            </div>
+            <div class="days">
+              <div class="head">
+                <span>Tue</span>
+              </div>
+              <div class="body">
+                <img
+                  src="./assets/svg/rain-and-sleet-mix.svg"
+                  alt="rain-and-sleet-mix" />
+                <span class="degree">27</span>
+              </div>
+            </div>
+            <div class="days">
+              <div class="head">
+                <span>Tue</span>
+              </div>
+              <div class="body">
+                <img
+                  src="./assets/svg/rain-and-sleet-mix.svg"
+                  alt="rain-and-sleet-mix" />
+                <span class="degree">27</span>
+              </div>
+            </div>
+            <div class="days">
+              <div class="head">
+                <span>Tue</span>
+              </div>
+              <div class="body">
+                <img
+                  src="./assets/svg/rain-and-sleet-mix.svg"
+                  alt="rain-and-sleet-mix" />
+                <span class="degree">27</span>
+              </div>
+            </div>
+            <div class="days">
+              <div class="head">
+                <span>Tue</span>
+              </div>
+              <div class="body">
+                <img
+                  src="./assets/svg/rain-and-sleet-mix.svg"
+                  alt="rain-and-sleet-mix" />
+                <span class="degree">27</span>
+              </div>
+            </div>
+            <div class="days">
+              <div class="head">
+                <span>Tue</span>
+              </div>
+              <div class="body">
+                <img
+                  src="./assets/svg/rain-and-sleet-mix.svg"
+                  alt="rain-and-sleet-mix" />
+                <span class="degree">27</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chance-of-rain">
+          <h4>chance of rain</h4>
+          <div class="possibiltys">
+            <div class="status">
+              <span id="rainy">rainy<span id="rainy" class="rainy"><i></i></span></span>
+              <span>sunny<span id="sunny" class="sunny"><i></i></span></span>
+              <span>snow<span id="snow" class="snow"><i></i></span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- MAP SECTION -->
+       <section class="forecast-map">
+        <div class="left-box">
+          <div class="head">
+            <h4>global map</h4>
+            <span class="view-wide">view wide</span>
+          </div>
+          <div class="map-container" id="map-container"></div>
+        </div>
+        <div class="right-box">
+          <div class="head">
+            <h4>other large cities</h4>
+          </div>
+          <div class="cities" id="cities">
+            <div class="city">
+              <div class="txt">
+                <span>us</span>
+                <h5>California</h5>
+                <span>mostly sunny</span>
+              </div>
+              <div class="icon">
+                <img src="./assets/svg/clear-day.svg" alt="">
+              </div>
+            </div>
+            <div class="city">
+              <div class="txt">
+                <span>us</span>
+                <h5>California</h5>
+                <span>mostly sunny</span>
+              </div>
+              <div class="icon">
+                <img src="./assets/svg/clear-day.svg" alt="">
+              </div>
+            </div>
+            <div class="city">
+              <div class="txt">
+                <span>us</span>
+                <h5>California</h5>
+                <span>mostly sunny</span>
+              </div>
+              <div class="icon">
+                <img src="./assets/svg/clear-day.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+       </section>
+    <!-- cstm js -->
+     
+    <script src="main.js" type="module"></script>
+    <script src="dom.js"></script>
+  </body>
+</html>
