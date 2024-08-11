@@ -1,5 +1,5 @@
 export const forecast_api_key = "13e2648bce534122952193155240108";
-export const forecast_url = "http://api.weatherapi.com/v1/forecast.json";
+export const forecast_url = "https://api.weatherapi.com/v1/forecast.json";
 export const mapContainer = document.getElementById("map-container");
 export const map = L.map(mapContainer).setView([0, 0], 2);
 export async function fetchData(url) {
