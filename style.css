@@ -464,7 +464,7 @@ body {
     .forecast-details {
         flex-wrap: wrap;
         overflow: auto;
-        .chance-of-rain {
+        & .chance-of-rain {
             width: 100%;
         }
     }
