@@ -43,4 +43,4 @@ async function main() {
   switchDay(data);
   // console.log(data);
 }
-main();
+window.addEventListener("load", main)
