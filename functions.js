@@ -84,7 +84,7 @@ export async function weekForecast(param) {
   const arrayOfDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const weekDay = document.querySelector("#week-day");
   if (weekDay.childElementCount == 7) {
-   // weekDay.innerHTML = "";
+    weekDay.innerHTML = "";
   }
   // function of create days div
   function createDaysDiv(dayOfWeek, day) {
